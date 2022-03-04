@@ -16,8 +16,19 @@ const restaurantsSlice = createSlice({
       );
       state.entities.splice(index, 1);
     },
+    restaurantUpdated(state, action) {
+      const { id, title, content } = action.payload;
+      const existingRestaurant = state.entities.find(
+        (restaurant) => restaurant.id === id
+      );
+      if (existingRestaurant) {
+        existingRestaurant.title = title;
+        existingRestaurant.content = content;
+      }
+    },
   },
 });
 
-export const { restaurantAdded, restaurantRemoved } = restaurantsSlice.actions;
+export const { restaurantAdded, restaurantRemoved, restaurantUpdated } =
+  restaurantsSlice.actions;
 export default restaurantsSlice.reducer;

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Reviews from "./Reviews";
 
 function ReviewInput({ handleAddReview, restaurantId }) {
   const [comment, setComment] = useState("");

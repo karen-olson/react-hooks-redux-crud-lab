@@ -6,11 +6,16 @@ function Restaurant({ restaurant, handleDeleteRestaurant }) {
     handleDeleteRestaurant(restaurant.id);
   }
 
+  function handleEditClick() {
+    // do some stuff to edit the form
+  }
+
   return (
     <div>
       <li>
         {restaurant.name}
         <button onClick={handleDeleteClick}> Delete Restaurant </button>
+        <button onClick={handleEditClick}> Edit Restaurant </button>
         <ReviewsContainer restaurantId={restaurant.id} />
       </li>
     </div>
