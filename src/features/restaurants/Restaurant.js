@@ -1,13 +1,17 @@
 import React from "react";
 import ReviewsContainer from "../reviews/ReviewsContainer";
 
-function Restaurant({ restaurant }) {
+function Restaurant({ restaurant, handleDeleteRestaurant }) {
+  function handleDeleteClick() {
+    handleDeleteRestaurant(restaurant.id);
+  }
+
   return (
     <div>
       <li>
         {restaurant.name}
-        <button> Delete Restaurant </button>
-        <ReviewsContainer restaurant={restaurant} />
+        <button onClick={handleDeleteClick}> Delete Restaurant </button>
+        <ReviewsContainer restaurantId={restaurant.id} />
       </li>
     </div>
   );

@@ -1,10 +1,14 @@
 import React from "react";
 
-function Review({ review }) {
+function Review({ review, handleDeleteReview }) {
+  function handleDeleteClick() {
+    handleDeleteReview(review.id);
+  }
+
   return (
     <div>
       <li>{review.comment}</li>
-      <button> Delete Review </button>
+      <button onClick={handleDeleteClick}> Delete Review </button>
     </div>
   );
 }
